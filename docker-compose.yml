@@ -5,7 +5,6 @@ services:
     hostname: spark-dev-environment
     volumes:
       - ../:/workspaces
-      - ~/.ssh:/root/.ssh
     restart: unless-stopped
     entrypoint: sleep infinity
     deploy:
