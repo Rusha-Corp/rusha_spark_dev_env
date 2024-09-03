@@ -1,0 +1,1 @@
+poetry run ansible-playbook -i hosts.ini playbooks/deploy.yml
