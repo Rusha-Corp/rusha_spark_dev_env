@@ -4,13 +4,13 @@
   tasks:
   - name: Pull git repo
     ansible.builtin.git:
-      repo: git@github.com:oneworldanalytics/spark-hive-infrastructure.git
-      dest: spark-container-v2
-      version: "{{ GIT_VERSION }}"
+      repo: git@github.com:Rusha-Corp/rusha_spark_dev_env.git
+      dest: spark-dev-env
+      version: main
       force: yes
 
   - name: run docker-compose up
     shell: |
-      set -e
-      cd spark-container-v2
       docker-compose up -d --build 
+    args:
+      chdir: spark-dev-env
