@@ -1,0 +1,14 @@
+services:
+  spark-dev-environment:
+    image: europe-west1-docker.pkg.dev/owa-gemini/docker-registry/bitkubeops-spark:latest
+    container_name: spark-dev-environment
+    hostname: spark-dev-environment
+    volumes:
+      - ../:/workspaces
+    restart: unless-stopped
+    entrypoint: sleep infinity
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 32g

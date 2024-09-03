@@ -1,0 +1,16 @@
+- name: Deploy Spark container to contabo
+  hosts: contabo_dev
+  remote_user: dev
+  tasks:
+  - name: Pull git repo
+    ansible.builtin.git:
+      repo: git@github.com:oneworldanalytics/spark-hive-infrastructure.git
+      dest: spark-container-v2
+      version: "{{ GIT_VERSION }}"
+      force: yes
+
+  - name: run docker-compose up
+    shell: |
+      set -e
+      cd spark-container-v2
+      docker-compose up -d --build 
