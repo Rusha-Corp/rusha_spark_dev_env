@@ -11,4 +11,4 @@ services:
       resources:
         limits:
           cpus: '8'
-          memory: 32g
+          memory: 64g
