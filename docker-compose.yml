@@ -7,6 +7,7 @@ services:
       - ../:/workspaces
       - $HOME/.ssh/id_rsa:/root/.ssh/id_rsa
       - $HOME/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub
+      - $HOME/.ssh/known_hosts:/root/.ssh/known_hosts
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
     entrypoint: sleep infinity
