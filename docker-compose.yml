@@ -5,7 +5,8 @@ services:
     hostname: spark-dev-environment
     volumes:
       - ../:/workspaces
-      - $HOME/.ssh:/root/.ssh
+      - $HOME/.ssh/id_rsa:/root/.ssh/id_rsa
+      - $HOME/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub
     restart: unless-stopped
     entrypoint: sleep infinity
     deploy:
