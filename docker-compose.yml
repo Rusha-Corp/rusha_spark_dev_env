@@ -5,10 +5,11 @@ services:
     hostname: spark-dev-environment
     volumes:
       - ../:/workspaces
+      - $(home)/.ssh:/root/.ssh
     restart: unless-stopped
     entrypoint: sleep infinity
     deploy:
       resources:
         limits:
-          cpus: '8'
-          memory: 64g
+          cpus: '16'
+          memory: 96g
