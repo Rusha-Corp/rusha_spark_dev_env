@@ -1,6 +1,8 @@
 services:
   spark-dev-environment:
-    image: europe-west1-docker.pkg.dev/owa-gemini/docker-registry/bitkubeops-spark:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: spark-dev-environment
     hostname: spark-dev-environment
     volumes:
