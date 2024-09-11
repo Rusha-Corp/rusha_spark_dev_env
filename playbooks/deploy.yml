@@ -11,6 +11,6 @@
 
   - name: run docker-compose up
     shell: |
-      docker-compose up -d --build 
+      docker-compose up --build -d
     args:
       chdir: spark-dev-env
